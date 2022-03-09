@@ -1,5 +1,7 @@
 {
 	"scripts": {
-		"build-wasm": "cd wasm && wasm-pack build --target web"
+		"build-and-move": "npm run build-wasm && npm run copy-package",
+		"build-wasm": "cd wasm && wasm-pack build --target web",
+		"copy-package": "cd frontend/src && rm -r pkg && mkdir pkg && cp -a ../../wasm/pkg/. pkg/"
 	}
 }
